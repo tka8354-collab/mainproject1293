@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+     {% load static %}
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <form>
+        <input type="submit" value="Question Operation" formaction="/examapp/givemequestioncurd/">
+        <hr><br>
+        <input type="submit" value="Student Operation" formaction="/examapp/givemeusercurd/">
+        <hr><br>
+        <input type="submit" value="Student Login Operation" formaction="/examapp/givemelogin/">
+        <hr>
+        <hr><br>
+        <input type="submit" value="Result all User" formaction="/examapp/getallresultpage/">
+        <hr>
+
+    </form>
+</body>
+
+</html>

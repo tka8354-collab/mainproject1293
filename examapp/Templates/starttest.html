@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Question</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+   
+</head>
+
+<body>
+    <div class="exam-container">
+        <header>
+            <div class="header-top">
+                <span class="username">👤 {{request.session.username}}</span>&nbsp;&nbsp;<button><a href="/examapp/logoutuser/" style="text-decoration: none;">Logout</a></button>
+                <span class="message">{{message}}</span>
+            </div>
+            <hr>
+            
+        </header>
+
+        <main>
+            <form>
+                <input type="number" name="qno" value="{{question.qno}}"> <br><br>
+                <input type="hidden" name="answer" value="{{question.ans}}">
+                <input type="hidden" name="subject" value="{{question.subject}}">
+
+                <div class="question-box">
+                        <input type="text" name="qtext" value="{{question.qtext}}">                
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="op" value="{{question.op1}}"> {{question.op1}}
+                        </label>
+                        <label>
+                            <input type="radio" name="op" value="{{question.op2}}"> {{question.op2}}
+                        </label>
+                        <label>
+                            <input type="radio" name="op" value="{{question.op3}}"> {{question.op3}}
+                        </label>
+                        <label>
+                            <input type="radio" name="op" value="{{question.op4}}"> {{question.op4}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <input type="submit" value="⏮ Previous" formaction="/examapp/previousquestion/">
+                    <input type="submit" value="⏭ Next" formaction="/examapp/nextquestion/">
+                    <input type="submit" id="endExamBtn" value="⏹ End Exam" formaction="/examapp/endtest/" class="end-btn">
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
